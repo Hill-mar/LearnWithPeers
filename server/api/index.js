@@ -1,27 +1,29 @@
-// server/app.js
-
 const express = require('express');
 const mongoose = require('mongoose');
 const http = require('http');
 const socketio = require('socket.io');
 const cors = require('cors');
 
-
-const challengeRoutes = require('../routes/challenges');
-const attemptsRoutes = require('../routes/attempts');
-const userRoutes = require('../routes/users');
-const reviewsRoutes = require('../routes/reviews');
+const challengeRoutes = require('./routes/challenges');
+const attemptsRoutes = require('./routes/attempts');
+const userRoutes = require('./routes/users');
+const reviewsRoutes = require('./routes/reviews');
 
 const app = express();
 const server = http.createServer(app);
-const path = require('path');
 
-const io = socketio(server);
+const io = socketio(server, {
+  cors: {
+    origin: "https://learn-with-peers-frontend.vercel.app",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"],
+    credentials: true
+  }
+});
 
 const PORT = process.env.PORT || 8000;
-const MONGODB_URI = process.env.MONGODB_URI; // Ensure this is set in your environment
-const CORS_ORIGIN = process.env.CORS_ORIGIN; // Ensure this is set in your environment
-
+const MONGODB_URI = process.env.MONGODB_URI;
+const CORS_ORIGIN = process.env.CORS_ORIGIN || "https://learn-with-peers-frontend.vercel.app";
 
 // Connect to MongoDB
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -31,7 +33,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true 
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: CORS_ORIGIN, // Adjust this if your frontend is served from another port or host
+  origin: CORS_ORIGIN,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
 
@@ -78,7 +80,7 @@ io.on('connection', (socket) => {
   });
 });
 
-// Start the server with http.listen instead of app.listen
+// Start the server
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
