@@ -8,6 +8,7 @@ function ChallengeSubmission() {
   const [description, setDescription] = useState('');
   const [photo, setPhoto] = useState(null);
   const [message, setMessage] = useState(''); // For user feedback
+  const BACKEND_URL= process.env.BACKEND_URL;
 
   const handlePhotoChange = (event) => {
     if (event.target.files[0] && event.target.files[0].type.startsWith('image/')) {
@@ -28,7 +29,7 @@ function ChallengeSubmission() {
     
 
     try {
-      const response = await fetch('https://learn-with-peers-backend.vercel.app/api/challenges', {
+      const response = await fetch(`${BACKEND_URL}/api/challenges`, {
         method: 'POST',
         body: formData,
       });

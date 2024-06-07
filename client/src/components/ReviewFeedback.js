@@ -7,11 +7,12 @@ const ReviewFeedback = () => {
     const { user } = useUser();
     const [feedbacks, setFeedbacks] = useState([]);
     const [loading, setLoading] = useState(true);
+    const BACKEND_URL= process.env.BACKEND_URL;
 
     useEffect(() => {
         if (user) {
             console.log('User:', user); // Debug log
-            fetch('https://learn-with-peers-backend.vercel.app/api/reviews/review-feedback')
+            fetch(`${BACKEND_URL}/api/reviews/review-feedback`)
                 .then(response => response.json())
                 .then(data => {
                     console.log('Fetched data:', data); // Debug log

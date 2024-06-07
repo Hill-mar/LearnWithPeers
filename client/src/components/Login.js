@@ -9,12 +9,13 @@ function Login({ setIsLoggedIn }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState(''); // State to hold login error messages
+  const BACKEND_URL= process.env.BACKEND_URL;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await fetch('https://learn-with-peers-backend.vercel.app/api/users/login', {
+      const response = await fetch(`${BACKEND_URL}/api/users/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

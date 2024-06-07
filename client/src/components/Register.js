@@ -15,6 +15,7 @@ function Register() {
   const [bio, setBio] = useState('');
   const navigate = useNavigate();
   const [message, setMessage] = useState('');
+  const BACKEND_URL= process.env.BACKEND_URL;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -30,7 +31,7 @@ function Register() {
     }
 
     try {
-      const response = await fetch('https://learn-with-peers-backend.vercel.app/api/users/register', {
+      const response = await fetch(`${BACKEND_URL}/api/users/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

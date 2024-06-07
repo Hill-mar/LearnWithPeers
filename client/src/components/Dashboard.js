@@ -6,23 +6,24 @@ const Dashboard = () => {
   const { user } = useUser();
   const [submitted, setSubmitted] = useState(0);
   const [attempted, setAttempted] = useState(0);
-  const [reviewed, setReviewed] = useState(0); // Hardcoded until review functionality is sorted out
+  const [reviewed, setReviewed] = useState(0); 
+  const BACKEND_URL= process.env.BACKEND_URL;
 
   useEffect(() => {
     if (user) {
-      fetch(`https://learn-with-peers-backend.vercel.app/api/users/challenge-count/${user.username}`)
+      fetch(`${BACKEND_URL}/api/users/challenge-count/${user.username}`)
         .then(response => response.json())
         .then(data => setSubmitted(data.count))
         .catch(error => console.error('Error fetching challenge count:', error));
 
-      fetch(`https://learn-with-peers-backend.vercel.app/users/attempt-count/${user.username}`)
+      fetch(`${BACKEND_URL}/users/attempt-count/${user.username}`)
         .then(response => response.json())
         .then(data => setAttempted(data.count))
         .catch(error => console.error('Error fetching attempt count:', error));
 
 
 
-      fetch(`https://learn-with-peers-backend.vercel.app/api/users/review-count/${user.username}`)
+      fetch(`${BACKEND_URL}/api/users/review-count/${user.username}`)
         .then(response => response.json())
         .then(data => setReviewed(data.count))
         .catch(error => console.error('Error fetching review count:', error));

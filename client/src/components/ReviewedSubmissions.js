@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import '../styles/ReviewedSubmissions.css'; // Ensure you have this CSS for styling
 import { useUser } from '../context/UserContext'; // Import the UserContext
 import io from 'socket.io-client';
+const BACKEND_URL= process.env.BACKEND_URL;
 
-const socket = io('https://learn-with-peers-backend.vercel.app'); // Adjust the URL if necessary
+const socket = io(`${BACKEND_URL}`); // Adjust the URL if necessary
 
 const ReviewedSubmissions = () => {
   const [reviews, setReviews] = useState([]);
@@ -14,7 +15,7 @@ const ReviewedSubmissions = () => {
 
   useEffect(() => {
     if (user && user.username) {
-      fetch(`https://learn-with-peers-backend.vercel.app/api/reviews/get-user-reviews/${user.username}`)
+      fetch(`${BACKEND_URL}/api/reviews/get-user-reviews/${user.username}`)
         .then(response => response.json())
         .then(data => {
           console.log('Fetched reviews:', data); // Log the fetched data

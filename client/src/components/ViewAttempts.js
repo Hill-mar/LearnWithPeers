@@ -7,10 +7,11 @@ function ViewAttempts() {
     const { user } = useUser(); // Get the logged-in user
     const [attempts, setAttempts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const BACKEND_URL= process.env.BACKEND_URL;
 
     useEffect(() => {
         if (user && user.username) {
-            fetch(`https://learn-with-peers-backend.vercel.app/api/attempts/view-attempts/${user.username}`) // Adjust this URL to your API endpoint for fetching attempts
+            fetch(`${BACKEND_URL}/api/attempts/view-attempts/${user.username}`) // Adjust this URL to your API endpoint for fetching attempts
                .then(response => response.json())
                .then(data => {
                     console.log("Data from API:", data);  // Check the data here

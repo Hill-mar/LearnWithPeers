@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import '../styles/LiveChat.css';
 
-const socket = io('https://learn-with-peers-backend.vercel.app'); // Adjust the URL if necessary
+const BACKEND_URL= process.env.BACKEND_URL;
+const socket = io(`${BACKEND_URL}`); // Adjust the URL if necessary
 
 const LiveChat = ({ attemptId }) => {
     const [messages, setMessages] = useState([]);

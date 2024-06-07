@@ -3,6 +3,8 @@ import { useUser } from '../context/UserContext';
 import Select from 'react-select';
 import '../styles/Profile.css';
 
+const BACKEND_URL= process.env.BACKEND_URL;
+
 const availabilityOptions = [
     { value: 'Available', label: 'Available' },
     { value: 'Busy', label: 'Busy' },
@@ -23,7 +25,7 @@ const Profile = () => {
     const [editing, setEditing] = useState(false);
 
     useEffect(() => {
-        fetch(`https://learn-with-peers-backend.vercel.app/api/users/profile/${user.username}`)
+        fetch(`${BACKEND_URL}/api/users/profile/${user.username}`)
             .then(response => response.json())
             .then(data => {
                 setProfile(data);
@@ -34,7 +36,7 @@ const Profile = () => {
     }, [user.username]);
 
     const handleSave = () => {
-        fetch(`https://learn-with-peers-backend.vercel.app/api/users/profile/${user.username}`, {
+        fetch(`${BACKEND_URL}/api/users/profile/${user.username}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

@@ -6,9 +6,10 @@ function Challenges() {
     const [challenges, setChallenges] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
+    const BACKEND_URL= process.env.BACKEND_URL;
 
     useEffect(() => {
-        fetch('https://learn-with-peers-backend.vercel.app/api/challenges')
+        fetch(`${BACKEND_URL}/api/challenges`)
             .then(response => response.json())
             .then(data => {
                 setChallenges(data);

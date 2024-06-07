@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import StarRating from './StarRating'; // Reuse the existing StarRating component
 import '../styles/ReviewRating.css'; // Ensure you have this CSS for styling
 
+
 const ReviewRatingForm = ({ onSubmit }) => {
     const [ratings, setRatings] = useState({
         clarity: 0,

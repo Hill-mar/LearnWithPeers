@@ -5,8 +5,8 @@ import io from 'socket.io-client';
 import LiveChat from './LiveChat'; // Import the LiveChat component
 import ReadOnlyStarRating from './ReadOnlyStarRating'; // Import the ReadOnlyStarRating component
 import ReviewRatingForm from './ReviewRating'; // Import the ReviewRatingForm component
-
-const socket = io('https://server-rgjzels57-hilmar-chesters-projects.vercel.app'); // Adjust the URL if necessary
+const BACKEND_URL= process.env.BACKEND_URL;
+const socket = io(`${BACKEND_URL}`); // Adjust the URL if necessary
 
 const ReviewDetail = () => {
     const { reviewId } = useParams();
@@ -15,7 +15,7 @@ const ReviewDetail = () => {
     const [liveChatRequested, setLiveChatRequested] = useState(false);
 
     useEffect(() => {
-        fetch(`https://server-rgjzels57-hilmar-chesters-projects.vercel.app/api/reviews/${reviewId}`)
+        fetch(`${BACKEND_URL}/api/reviews/${reviewId}`)
             .then(response => response.json())
             .then(data => {
                 console.log("Data received:", data);
@@ -40,7 +40,7 @@ const ReviewDetail = () => {
     };
 
     const handleReviewRatingSubmit = (ratings) => {
-        fetch(`https://learn-with-peers-backend.vercel.app/api/reviews/rate-review/${reviewId}`, {
+        fetch(`${BACKEND_URL}/api/reviews/rate-review/${reviewId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

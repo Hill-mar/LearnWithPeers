@@ -5,12 +5,14 @@ import StarRating from './StarRating';
 import '../styles/AttemptDetails.css';
 import { useUser } from '../context/UserContext';
 
+
 function AttemptDetails() {
     const { attemptId } = useParams();
     const [attempt, setAttempt] = useState(null);
     const [responses, setResponses] = useState({});
     const [loading, setLoading] = useState(true);
     const { user } = useUser();
+    const BACKEND_URL= process.env.BACKEND_URL;
 
     // State for rubric ratings
     const [rubric, setRubric] = useState({
@@ -20,11 +22,11 @@ function AttemptDetails() {
     });
 
     useEffect(() => {
-        const url = `https://learn-with-peers-backend.vercel.app/api/attempts/${attemptId}`;
+        const url = `${BACKEND_URL}/api/attempts/${attemptId}`;
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                const fixedVideoUrl = `https://learn-with-peers-backend.vercel.app/${data.videoUrl.replace(/\\/g, '/')}`;
+                const fixedVideoUrl = `${BACKEND_URL}/${data.videoUrl.replace(/\\/g, '/')}`;
                 data.videoUrl = fixedVideoUrl;
                 setAttempt(data);
                 setLoading(false);
@@ -56,7 +58,7 @@ function AttemptDetails() {
         const totalScore = rubric.codeQuality + rubric.functionality + rubric.readability;
         const scaledRating = (totalScore / 15) * 5;
 
-        fetch('https://learn-with-peers-backend.vercel.app/api/reviews/send-reviews', {
+        fetch(`${BACKEND_URL}/api/reviews/send-reviews`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
