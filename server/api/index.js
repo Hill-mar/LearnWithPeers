@@ -19,6 +19,9 @@ const path = require('path');
 const io = socketio(server);
 
 const PORT = process.env.PORT || 8000;
+const MONGODB_URI = process.env.MONGODB_URI; // Ensure this is set in your environment
+const CORS_ORIGIN = process.env.CORS_ORIGIN; // Ensure this is set in your environment
+
 
 // Connect to MongoDB
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
