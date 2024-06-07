@@ -3,7 +3,7 @@ import { useUser } from '../context/UserContext';
 import Select from 'react-select';
 import '../styles/Profile.css';
 
-const BACKEND_URL= process.env.BACKEND_URL;
+const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
 
 const availabilityOptions = [
     { value: 'Available', label: 'Available' },

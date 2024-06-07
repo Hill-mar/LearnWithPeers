@@ -5,7 +5,7 @@ import io from 'socket.io-client';
 import LiveChat from './LiveChat'; // Import the LiveChat component
 import ReadOnlyStarRating from './ReadOnlyStarRating'; // Import the ReadOnlyStarRating component
 import ReviewRatingForm from './ReviewRating'; // Import the ReviewRatingForm component
-const BACKEND_URL= process.env.BACKEND_URL;
+const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
 const socket = io(`${BACKEND_URL}`); // Adjust the URL if necessary
 
 const ReviewDetail = () => {

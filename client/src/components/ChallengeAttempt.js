@@ -21,7 +21,7 @@ function ChallengeAttempt() {
     const [questions, setQuestions] = useState([]);
     const [showReviewerModal, setShowReviewerModal] = useState(false);
     const { user } = useUser();
-    const BACKEND_URL= process.env.BACKEND_URL;
+    const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
 
     useEffect(() => {
         fetch(`${BACKEND_URL}/api/challenges/${challengeId}`)

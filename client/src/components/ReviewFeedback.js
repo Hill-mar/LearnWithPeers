@@ -7,7 +7,7 @@ const ReviewFeedback = () => {
     const { user } = useUser();
     const [feedbacks, setFeedbacks] = useState([]);
     const [loading, setLoading] = useState(true);
-    const BACKEND_URL= process.env.BACKEND_URL;
+    const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
 
     useEffect(() => {
         if (user) {

@@ -7,7 +7,7 @@ function ReviewAttempt() {
     const { attemptId } = useParams();
     const [attempt, setAttempt] = useState(null);
     const [loading, setLoading] = useState(true);
-    const BACKEND_URL= process.env.BACKEND_URL;
+    const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
 
     useEffect(() => {
         fetch(`${BACKEND_URL}/api/attempts/${attemptId}`)

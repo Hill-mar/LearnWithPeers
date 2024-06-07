@@ -8,7 +8,7 @@ function ChallengeSubmission() {
   const [description, setDescription] = useState('');
   const [photo, setPhoto] = useState(null);
   const [message, setMessage] = useState(''); // For user feedback
-  const BACKEND_URL= process.env.BACKEND_URL;
+  const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
 
   const handlePhotoChange = (event) => {
     if (event.target.files[0] && event.target.files[0].type.startsWith('image/')) {

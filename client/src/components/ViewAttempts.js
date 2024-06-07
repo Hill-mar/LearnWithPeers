@@ -7,7 +7,7 @@ function ViewAttempts() {
     const { user } = useUser(); // Get the logged-in user
     const [attempts, setAttempts] = useState([]);
     const [loading, setLoading] = useState(true);
-    const BACKEND_URL= process.env.BACKEND_URL;
+    const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
 
     useEffect(() => {
         if (user && user.username) {

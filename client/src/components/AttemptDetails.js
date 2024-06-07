@@ -12,7 +12,7 @@ function AttemptDetails() {
     const [responses, setResponses] = useState({});
     const [loading, setLoading] = useState(true);
     const { user } = useUser();
-    const BACKEND_URL= process.env.BACKEND_URL;
+    const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
 
     // State for rubric ratings
     const [rubric, setRubric] = useState({

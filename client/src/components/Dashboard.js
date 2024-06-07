@@ -7,7 +7,7 @@ const Dashboard = () => {
   const [submitted, setSubmitted] = useState(0);
   const [attempted, setAttempted] = useState(0);
   const [reviewed, setReviewed] = useState(0); 
-  const BACKEND_URL= process.env.BACKEND_URL;
+  const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
 
   useEffect(() => {
     if (user) {

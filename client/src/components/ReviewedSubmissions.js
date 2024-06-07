@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import '../styles/ReviewedSubmissions.css'; // Ensure you have this CSS for styling
 import { useUser } from '../context/UserContext'; // Import the UserContext
 import io from 'socket.io-client';
-const BACKEND_URL= process.env.BACKEND_URL;
+const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
 
 const socket = io(`${BACKEND_URL}`); // Adjust the URL if necessary
 

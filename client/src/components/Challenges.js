@@ -6,7 +6,7 @@ function Challenges() {
     const [challenges, setChallenges] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
-    const BACKEND_URL= process.env.BACKEND_URL;
+    const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
 
     useEffect(() => {
         fetch(`${BACKEND_URL}/api/challenges`)

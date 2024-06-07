@@ -9,7 +9,7 @@ function Login({ setIsLoggedIn }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState(''); // State to hold login error messages
-  const BACKEND_URL= process.env.BACKEND_URL;
+  const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
