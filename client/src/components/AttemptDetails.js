@@ -20,11 +20,11 @@ function AttemptDetails() {
     });
 
     useEffect(() => {
-        const url = `https://server-rgjzels57-hilmar-chesters-projects.vercel.app/api/attempts/${attemptId}`;
+        const url = `https://learn-with-peers-backend.vercel.app/api/attempts/${attemptId}`;
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                const fixedVideoUrl = `https://server-rgjzels57-hilmar-chesters-projects.vercel.app/${data.videoUrl.replace(/\\/g, '/')}`;
+                const fixedVideoUrl = `https://learn-with-peers-backend.vercel.app/${data.videoUrl.replace(/\\/g, '/')}`;
                 data.videoUrl = fixedVideoUrl;
                 setAttempt(data);
                 setLoading(false);
@@ -56,7 +56,7 @@ function AttemptDetails() {
         const totalScore = rubric.codeQuality + rubric.functionality + rubric.readability;
         const scaledRating = (totalScore / 15) * 5;
 
-        fetch('https://server-rgjzels57-hilmar-chesters-projects.vercel.app/api/reviews/send-reviews', {
+        fetch('https://learn-with-peers-backend.vercel.app/api/reviews/send-reviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

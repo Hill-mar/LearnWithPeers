@@ -30,7 +30,7 @@ function Register() {
     }
 
     try {
-      const response = await fetch('https://server-gilt-eight.vercel.app/api/users/register', {
+      const response = await fetch('https://learn-with-peers-backend.vercel.app/api/users/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -28,7 +28,7 @@ function ChallengeSubmission() {
     
 
     try {
-      const response = await fetch('https://server-rgjzels57-hilmar-chesters-projects.vercel.app/api/challenges', {
+      const response = await fetch('https://learn-with-peers-backend.vercel.app/api/challenges', {
         method: 'POST',
         body: formData,
       });

@@ -8,7 +8,7 @@ function Challenges() {
     const [error, setError] = useState('');
 
     useEffect(() => {
-        fetch('https://server-rgjzels57-hilmar-chesters-projects.vercel.app/api/challenges')
+        fetch('https://learn-with-peers-backend.vercel.app/api/challenges')
             .then(response => response.json())
             .then(data => {
                 setChallenges(data);

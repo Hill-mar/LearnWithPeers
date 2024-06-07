@@ -21,14 +21,14 @@ const io = socketio(server);
 const PORT = process.env.PORT || 8000;
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://hilmar:flameo24@peerplatform.mqsqf4i.mongodb.net/?retryWrites=true&w=majority&appName=PeerPlatform', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected successfully'))
   .catch(err => console.error('MongoDB connection error:', err));
 
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: 'https://client-six-liard.vercel.app', // Adjust this if your frontend is served from another port or host
+  origin: CORS_ORIGIN, // Adjust this if your frontend is served from another port or host
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
 

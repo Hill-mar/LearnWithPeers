@@ -9,7 +9,7 @@ function ReviewAttempt() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`https://server-rgjzels57-hilmar-chesters-projects.vercel.app/api/attempts/${attemptId}`)
+        fetch(`https://learn-with-peers-backend.vercel.app/api/attempts/${attemptId}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);

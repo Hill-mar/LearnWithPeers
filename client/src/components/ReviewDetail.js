@@ -40,7 +40,7 @@ const ReviewDetail = () => {
     };
 
     const handleReviewRatingSubmit = (ratings) => {
-        fetch(`https://server-rgjzels57-hilmar-chesters-projects.vercel.app/api/reviews/rate-review/${reviewId}`, {
+        fetch(`https://learn-with-peers-backend.vercel.app/api/reviews/rate-review/${reviewId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

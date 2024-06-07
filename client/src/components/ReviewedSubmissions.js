@@ -5,7 +5,7 @@ import '../styles/ReviewedSubmissions.css'; // Ensure you have this CSS for styl
 import { useUser } from '../context/UserContext'; // Import the UserContext
 import io from 'socket.io-client';
 
-const socket = io('https://server-rgjzels57-hilmar-chesters-projects.vercel.app'); // Adjust the URL if necessary
+const socket = io('https://learn-with-peers-backend.vercel.app'); // Adjust the URL if necessary
 
 const ReviewedSubmissions = () => {
   const [reviews, setReviews] = useState([]);
@@ -14,7 +14,7 @@ const ReviewedSubmissions = () => {
 
   useEffect(() => {
     if (user && user.username) {
-      fetch(`https://server-rgjzels57-hilmar-chesters-projects.vercel.app/api/reviews/get-user-reviews/${user.username}`)
+      fetch(`https://learn-with-peers-backend.vercel.app/api/reviews/get-user-reviews/${user.username}`)
         .then(response => response.json())
         .then(data => {
           console.log('Fetched reviews:', data); // Log the fetched data

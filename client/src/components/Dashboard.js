@@ -10,19 +10,19 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:8000/api/users/challenge-count/${user.username}`)
+      fetch(`https://learn-with-peers-backend.vercel.app/api/users/challenge-count/${user.username}`)
         .then(response => response.json())
         .then(data => setSubmitted(data.count))
         .catch(error => console.error('Error fetching challenge count:', error));
 
-      fetch(`http://localhost:8000/users/attempt-count/${user.username}`)
+      fetch(`https://learn-with-peers-backend.vercel.app/users/attempt-count/${user.username}`)
         .then(response => response.json())
         .then(data => setAttempted(data.count))
         .catch(error => console.error('Error fetching attempt count:', error));
 
 
 
-      fetch(`http://localhost:8000/api/users/review-count/${user.username}`)
+      fetch(`https://learn-with-peers-backend.vercel.app/api/users/review-count/${user.username}`)
         .then(response => response.json())
         .then(data => setReviewed(data.count))
         .catch(error => console.error('Error fetching review count:', error));

@@ -23,7 +23,7 @@ const Profile = () => {
     const [editing, setEditing] = useState(false);
 
     useEffect(() => {
-        fetch(`https://server-rgjzels57-hilmar-chesters-projects.vercel.app/api/users/profile/${user.username}`)
+        fetch(`https://learn-with-peers-backend.vercel.app/api/users/profile/${user.username}`)
             .then(response => response.json())
             .then(data => {
                 setProfile(data);
@@ -34,7 +34,7 @@ const Profile = () => {
     }, [user.username]);
 
     const handleSave = () => {
-        fetch(`https://server-rgjzels57-hilmar-chesters-projects.vercel.app/api/users/profile/${user.username}`, {
+        fetch(`https://learn-with-peers-backend.vercel.app/api/users/profile/${user.username}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

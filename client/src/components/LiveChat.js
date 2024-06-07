@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import '../styles/LiveChat.css';
 
-const socket = io('https://server-rgjzels57-hilmar-chesters-projects.vercel.app'); // Adjust the URL if necessary
+const socket = io('https://learn-with-peers-backend.vercel.app'); // Adjust the URL if necessary
 
 const LiveChat = ({ attemptId }) => {
     const [messages, setMessages] = useState([]);

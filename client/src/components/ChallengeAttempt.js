@@ -23,7 +23,7 @@ function ChallengeAttempt() {
     const { user } = useUser();
 
     useEffect(() => {
-        fetch(`https://server-rgjzels57-hilmar-chesters-projects.vercel.app/api/challenges/${challengeId}`)
+        fetch(`https://learn-with-peers-backend.vercel.app/api/challenges/${challengeId}`)
             .then(response => response.json())
             .then(data => {
                 setChallenge(data);
@@ -35,7 +35,7 @@ function ChallengeAttempt() {
                 setLoading(false);
             });
 
-        fetch('https://server-rgjzels57-hilmar-chesters-projects.vercel.app/api/users/get-users')
+        fetch('https://learn-with-peers-backend.vercel.app/api/users/get-users')
             .then(response => response.json())
             .then(data => setUsers(data))
             .catch(error => console.error('Failed to fetch users:', error));
@@ -76,7 +76,7 @@ function ChallengeAttempt() {
         const formData = new FormData();
         formData.append('video', videoBlob, 'filename.webm');
 
-        const uploadResponse = await fetch('https://server-rgjzels57-hilmar-chesters-projects.vercel.app/api/attempts/upload-video', {
+        const uploadResponse = await fetch('https://learn-with-peers-backend.vercel.app/api/attempts/upload-video', {
             method: 'POST',
             body: formData,
         });
@@ -98,7 +98,7 @@ function ChallengeAttempt() {
         try {
             const videoPath = await handleVideoUpload(videoBlob);
 
-            const attemptResponse = await fetch('https://server-rgjzels57-hilmar-chesters-projects.vercel.app/api/attempts/send-attempts', {
+            const attemptResponse = await fetch('https://learn-with-peers-backend.vercel.app/api/attempts/send-attempts', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -163,7 +163,7 @@ function ChallengeAttempt() {
             </div>
             <div className="details-container">
                 <h1>Challenge Title: {challenge?.title}</h1>
-                {challenge && <img src={`https://server-rgjzels57-hilmar-chesters-projects.vercel.app/api/challenges/${challengeId}/photo`} alt="Challenge" className="challenge-image" />}
+                {challenge && <img src={`https://learn-with-peers-backend.vercel.app/api/challenges/${challengeId}/photo`} alt="Challenge" className="challenge-image" />}
                 <div className="details-text">
                     <p>Created by: {challenge?.createdBy}</p>
                     <p>Description: {challenge?.description}</p>
