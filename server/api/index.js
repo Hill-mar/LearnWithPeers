@@ -16,14 +16,7 @@ const app = express();
 const server = http.createServer(app);
 const path = require('path');
 
-const io = socketio(server, {
-  cors: {
-    origin: "https://learn-with-peers-frontend.vercel.app",
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type"],
-    credentials: true
-  }
-});
+const io = socketio(server);
 
 const PORT = process.env.PORT || 8000;
 const MONGODB_URI = process.env.MONGODB_URI; // Ensure this is set in your environment
