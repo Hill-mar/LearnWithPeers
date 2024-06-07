@@ -15,7 +15,7 @@ function Login({ setIsLoggedIn }) {
     event.preventDefault();
 
     try {
-      const response = await fetch(`${BACKEND_URL}/api/users/login`, {
+      const response = await fetch(`${BACKEND_URL}api/users/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
