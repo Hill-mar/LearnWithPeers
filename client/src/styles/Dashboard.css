@@ -1,0 +1,57 @@
+/* Dashboard.css */
+.dashboard {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center-align children */
+    padding: 20px;
+    background: #f9f9f9; /* Light background for the dashboard */
+}
+
+.welcome-message {
+    margin-bottom: 30px; /* Space between the message and the boxes */
+    font-size: 2em; /* Larger font size for the welcome message */
+    color: #333; /* Dark grey color for better readability */
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
+}
+
+.boxes-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%; /* Full width to spread boxes across */
+}
+
+.box {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 20%; /* Equal width for all boxes */
+    cursor: pointer; /* Indicates that the box is interactive */
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.box h2 {
+    font-size: 4em; /* Larger font size for emphasis */
+    color: #333; /* Dark grey color for better readability */
+    margin: 0;
+    transition: color 0.3s ease-in-out;
+}
+
+.box p {
+    font-size: 1.5em; /* Slightly larger paragraph text */
+    color: #666; /* Lighter text color */
+    margin-top: 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.box:hover h2,
+.box:hover p {
+    color: #0056b3; /* Change text color on hover */
+}

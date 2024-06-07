@@ -1,0 +1,45 @@
+/* ChallengeSubmission.css */
+.challenge-submission {
+    margin-left: 250px; /* Adjust based on the width of your sidebar */
+    padding: 20px;
+    max-width: 600px;
+}
+
+.challenge-submission form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.challenge-submission label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.challenge-submission input[type="text"],
+.challenge-submission textarea,
+.challenge-submission input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.challenge-submission textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.challenge-submission button {
+    background-color: #27374d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.challenge-submission button:hover {
+    background-color: #1a2533;
+}

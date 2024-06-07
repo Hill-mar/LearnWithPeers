@@ -1,0 +1,11 @@
+.review-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    padding: 20px;
+}
+
+.review-container video, .review-container pre {
+    flex: 1;
+    margin: 10px;
+}

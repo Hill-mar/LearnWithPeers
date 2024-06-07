@@ -1,0 +1,112 @@
+/* Profile.css */
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-left, .profile-right {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.profile-details h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.profile-details p {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.profile-bio {
+    margin-top: 20px;
+}
+
+.profile-bio h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.profile-bio p {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+.availability-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.availability-section h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.availability-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.availability-section input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.availability-section button,
+.edit-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.availability-section button:hover,
+.edit-button:hover {
+    background-color: #0056b3;
+}
+
+.save-button {
+    background-color: #28a745;
+}
+
+.save-button:hover {
+    background-color: #218838;
+}
+
+.cancel-button {
+    background-color: #dc3545;
+}
+
+.cancel-button:hover {
+    background-color: #c82333;
+}

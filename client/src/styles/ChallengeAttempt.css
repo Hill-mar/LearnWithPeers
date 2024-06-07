@@ -1,0 +1,104 @@
+/* ChallengeAttempt.css */
+.attemptcontainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.editor-container {
+    flex: 1 1 60%; /* 60% of the container width */
+    padding-right: 20px; /* Spacing between the editor and the details */
+}
+
+.details-container {
+    flex: 1 1 40%; /* 40% of the container width */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start of the flex-direction */
+}
+
+.challenge-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* Space below the image */
+}
+
+.details-text {
+    font-size: 16px;
+}
+
+.submit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #1a2533;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #28a745; /* Success color */
+}
+
+.recording-controls {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.recording-controls button {
+    padding: 8px 16px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.recording-controls button:disabled {
+    background-color: #ccc;
+}
+
+.recording-controls button svg {
+    margin-right: 8px;
+}
+/* ChallengeAttempt.css */
+.start-button {
+    background-color: #28a745; /* Green color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.start-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.stop-button {
+    background-color: #dc3545; /* Red color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.stop-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}

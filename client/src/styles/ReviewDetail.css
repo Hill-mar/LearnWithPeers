@@ -1,0 +1,105 @@
+/* src/styles/ReviewDetail.css */
+.review-detail-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: relative; /* Ensure the status can be positioned relative to this container */
+}
+
+.reviewer-status {
+  position: absolute;
+  top: 2px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.status-indicator.online {
+  background-color: green;
+}
+
+.status-indicator.offline {
+  background-color: red;
+}
+
+.status-text.online {
+  color: green;
+}
+
+.status-text.offline {
+  color: red;
+}
+
+.request-live-chat-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.request-live-chat-button:hover {
+  background-color: #0056b3;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px; /* Add some space below the status */
+}
+
+.left-side {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.right-side {
+  flex: 1;
+}
+
+.code-viewer {
+  background-color: #f4f4f4;
+  padding: 15px;
+  overflow-x: auto;
+  margin-bottom: 20px; /* Add some space below the code viewer */
+}
+
+.rubric-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e8e8e8;
+  padding: 10px;
+  margin-top: 190px;
+  width: 50%; /* Add some space below the rubric container */
+}
+
+.rubric-left, .rubric-right {
+  flex: 1;
+}
+
+.rubric-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.responses-container {
+  background-color: #e8e8e8;
+  padding: 10px;
+}
+
+.response {
+  margin-bottom: 20px;
+}
+
+

@@ -1,0 +1,26 @@
+/* src/components/StarRating.css */
+.star-rating {
+    display: flex;
+    direction: row;
+}
+
+.star-rating .on i {
+    color: gold;
+}
+
+.star-rating .off i {
+    color: gray;
+}
+
+.star-rating button {
+    background: none; /* Remove any background color */
+    border: none; /* Remove any border */
+    outline: none; /* Remove the default outline */
+    cursor: pointer;
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove any margin */
+}
+
+.star-rating i {
+    font-size: 1rem;
+}

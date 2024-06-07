@@ -1,0 +1,64 @@
+/* src/styles/ReviewRatingForm.css */
+.review-rating-form {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  flex-direction: column;
+  width: 50%;
+ 
+}
+
+.review-rating-form h3 {
+  margin-bottom: 20px;
+}
+
+.rubric-item {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the start of the container */
+  gap: 5px; /* Adjust gap as needed */
+  margin-bottom: 10px;
+}
+
+.submit-rating-button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-rating-button:hover {
+  background-color: #27374d;
+}
+
+/* Reuse styles from StarRating.css for consistency */
+.star-rating {
+  display: flex;
+  direction: row;
+}
+
+.star-rating .on i {
+  color: gold;
+}
+
+.star-rating .off i {
+  color: gray;
+}
+
+.star-rating button {
+  background: none; /* Remove any background color */
+  border: none; /* Remove any border */
+  outline: none; /* Remove the default outline */
+  cursor: pointer;
+  padding: 0; /* Remove any padding */
+  margin: 0; /* Remove any margin */
+}
+
+.star-rating i {
+  font-size: 1rem;
+}

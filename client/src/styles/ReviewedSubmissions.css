@@ -1,0 +1,106 @@
+/* src/styles/ReviewedSubmissions.css */
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center; /* Center the cards for better alignment */
+}
+
+.review-card {
+  flex: 1 1 300px; /* Flex basis of 300px */
+  border: 1px solid #ccc; /* Lighter border color */
+  padding: 20px;
+  border-radius: 10px; /* Slightly larger border radius for a softer edge */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* More pronounced shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions for hover effects */
+  background-color: #fff; /* White background */
+  position: relative; /* Needed for pseudo-elements or absolute positioning inside */
+}
+
+.review-card:hover {
+  transform: translateY(-5px); /* Move the card up slightly on hover */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Larger shadow on hover for a "lifting" effect */
+}
+
+.review-card h3 {
+  color: #333; /* Darker text for better readability */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+.review-card p {
+  color: #666; /* Lighter text color */
+  line-height: 1.5; /* More readable line spacing */
+  margin-bottom: 5px; /* Space between paragraphs */
+}
+
+.review-card a {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #007BFF; /* Bootstrap primary blue */
+  color: white;
+  border-radius: 5px;
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.review-card a:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Optional: Add a status indicator */
+.review-card::before {
+  content: attr(data-status); /* Use a data attribute for status */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /* Green background for status */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+}
+
+.subreviewer-status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.substatus-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.substatus-indicator.online {
+  background-color: green;
+}
+
+.substatus-indicator.offline {
+  background-color: red;
+}
+
+.substatus-text.online {
+  color: green;
+}
+
+.substatus-text.offline {
+  color: red;
+}
+
+/* New styles for the scaled rating */
+.scaled-rating {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #f8f9fa; /* Light background for better readability */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  color: #333; /* Darker text color */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for better visibility */
+}

@@ -1,0 +1,48 @@
+.homepage {
+    background: url('https://example.com/background-image.jpg') no-repeat center center/cover; /* Replace with your actual image URL */
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for better text visibility */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+  }
+  
+  .homepage h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .homepage p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .homepage-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .btn {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #367c39; /* Darker green on hover */
+  }
+  
