@@ -23,7 +23,7 @@ const server = http.createServer(app);
 });*/
 
 const PORT = process.env.PORT || 8000;
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://hilmar:flameo24@peerplatform.mqsqf4i.mongodb.net/?retryWrites=true&w=majority&appName=PeerPlatform";  
 const CORS_ORIGIN = process.env.CORS_ORIGIN || "https://learn-with-peers-frontend.vercel.app";
 
 // Connect to MongoDB

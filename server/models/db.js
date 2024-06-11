@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const uri = "mongodb+srv://hilmar:<password>@peerplatform.mqsqf4i.mongodb.net/?retryWrites=true&w=majority&appName=PeerPlatform";
+const uri = "mongodb+srv://hilmar:flameo24@peerplatform.mqsqf4i.mongodb.net/?retryWrites=true&w=majority&appName=PeerPlatform";
 
 const connect = async () => {
     try {
