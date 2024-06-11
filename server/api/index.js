@@ -3,11 +3,12 @@ const mongoose = require('mongoose');
 const http = require('http');
 const socketio = require('socket.io');
 const cors = require('cors');
+const path = require('path'); // Add this line to require the path module
 
-const challengeRoutes = require('./routes/challenges');
-const attemptsRoutes = require('./routes/attempts');
-const userRoutes = require('./routes/users');
-const reviewsRoutes = require('./routes/reviews');
+const challengeRoutes = require('../routes/challenges')
+const attemptsRoutes = require('../routes/attempts');
+const userRoutes = require('../routes/users');
+const reviewsRoutes = require('../routes/reviews');
 
 const app = express();
 const server = http.createServer(app);
