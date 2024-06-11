@@ -34,10 +34,10 @@ const ReviewDetail = () => {
         // };
     }, [reviewId]);
 
-    const requestLiveChat = () => {
+    /*const requestLiveChat = () => {
         setLiveChatRequested(true);
         // socket.emit('requestLiveChat', { reviewerId: review.reviewerId, attemptId: review.attemptId._id });
-    };
+    };*/
 
     const handleReviewRatingSubmit = (ratings) => {
         fetch(`${BACKEND_URL}/api/reviews/rate-review/${reviewId}`, {
