@@ -11,7 +11,7 @@ function ViewAttempts() {
 
     useEffect(() => {
         if (user && user.username) {
-            fetch(`${BACKEND_URL}/api/attempts/view-attempts/${user.username}`) // Adjust this URL to your API endpoint for fetching attempts
+            fetch(`https://learn-with-peers-backend.vercel.app/api/attempts/view-attempts/${user.username}`) // Adjust this URL to your API endpoint for fetching attempts
                .then(response => response.json())
                .then(data => {
                     console.log("Data from API:", data);  // Check the data here

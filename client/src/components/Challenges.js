@@ -9,7 +9,7 @@ function Challenges() {
     const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
 
     useEffect(() => {
-        fetch(`${BACKEND_URL}/api/challenges`)
+        fetch(`https://learn-with-peers-backend.vercel.app/api/challenges`)
             .then(response => response.json())
             .then(data => {
                 setChallenges(data);

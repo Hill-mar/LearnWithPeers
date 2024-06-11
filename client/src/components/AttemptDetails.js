@@ -22,7 +22,7 @@ function AttemptDetails() {
     });
 
     useEffect(() => {
-        const url = `${BACKEND_URL}/api/attempts/${attemptId}`;
+        const url = `https://learn-with-peers-backend.vercel.app/api/attempts/${attemptId}`;
         fetch(url)
             .then(response => response.json())
             .then(data => {

@@ -77,7 +77,7 @@ function ChallengeAttempt() {
         const formData = new FormData();
         formData.append('video', videoBlob, 'filename.webm');
 
-        const uploadResponse = await fetch(`${BACKEND_URL}/api/attempts/upload-video`, {
+        const uploadResponse = await fetch(`https://learn-with-peers-backend.vercel.app/api/attempts/upload-video`, {
             method: 'POST',
             body: formData,
         });
@@ -99,7 +99,7 @@ function ChallengeAttempt() {
         try {
             const videoPath = await handleVideoUpload(videoBlob);
 
-            const attemptResponse = await fetch(`${BACKEND_URL}/api/attempts/send-attempts`, {
+            const attemptResponse = await fetch(`https://learn-with-peers-backend.vercel.app/api/attempts/send-attempts`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

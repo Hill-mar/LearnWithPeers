@@ -14,7 +14,7 @@ const ReviewedSubmissions = () => {
 
   useEffect(() => {
     if (user && user.username) {
-      fetch(`${BACKEND_URL}/api/reviews/get-user-reviews/${user.username}`)
+      fetch(`https://learn-with-peers-backend.vercel.app/api/reviews/get-user-reviews/${user.username}`)
         .then(response => response.json())
         .then(data => {
           console.log('Fetched reviews:', data); // Log the fetched data

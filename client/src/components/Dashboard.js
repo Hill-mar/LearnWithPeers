@@ -11,7 +11,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`${BACKEND_URL}/api/users/challenge-count/${user.username}`)
+      fetch(`https://learn-with-peers-backend.vercel.app/api/users/challenge-count/${user.username}`)
         .then(response => response.json())
         .then(data => setSubmitted(data.count))
         .catch(error => console.error('Error fetching challenge count:', error));

@@ -10,7 +10,7 @@ function ReviewAttempt() {
     const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
 
     useEffect(() => {
-        fetch(`${BACKEND_URL}/api/attempts/${attemptId}`)
+        fetch(`https://learn-with-peers-backend.vercel.app/api/attempts/${attemptId}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);

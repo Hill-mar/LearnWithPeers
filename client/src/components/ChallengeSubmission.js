@@ -29,7 +29,7 @@ function ChallengeSubmission() {
     
 
     try {
-      const response = await fetch(`${BACKEND_URL}/api/challenges`, {
+      const response = await fetch(`https://learn-with-peers-backend.vercel.app/api/challenges`, {
         method: 'POST',
         body: formData,
       });

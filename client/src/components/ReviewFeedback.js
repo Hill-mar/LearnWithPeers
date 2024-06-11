@@ -12,7 +12,7 @@ const ReviewFeedback = () => {
     useEffect(() => {
         if (user) {
             console.log('User:', user); // Debug log
-            fetch(`${BACKEND_URL}/api/reviews/review-feedback`)
+            fetch(`https://learn-with-peers-backend.vercel.app/api/reviews/review-feedback`)
                 .then(response => response.json())
                 .then(data => {
                     console.log('Fetched data:', data); // Debug log
