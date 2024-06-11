@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../styles/ReviewDetail.css'; // Ensure you have this CSS for styling
 // import io from 'socket.io-client';
-import LiveChat from './LiveChat'; // Import the LiveChat component
+//import LiveChat from './LiveChat'; // Import the LiveChat component
 import ReadOnlyStarRating from './ReadOnlyStarRating'; // Import the ReadOnlyStarRating component
 import ReviewRatingForm from './ReviewRating'; // Import the ReviewRatingForm component
 const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
