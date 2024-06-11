@@ -1,12 +1,11 @@
-// src/components/ReviewedSubmissions.js
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/ReviewedSubmissions.css'; // Ensure you have this CSS for styling
 import { useUser } from '../context/UserContext'; // Import the UserContext
-import io from 'socket.io-client';
+// import io from 'socket.io-client';
 const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
 
-const socket = io(`${BACKEND_URL}`); // Adjust the URL if necessary
+// const socket = io(`${BACKEND_URL}`); // Adjust the URL if necessary
 
 const ReviewedSubmissions = () => {
   const [reviews, setReviews] = useState([]);
@@ -25,17 +24,17 @@ const ReviewedSubmissions = () => {
     }
 
     // Listen for online status updates
-    socket.on('updateUserStatus', ({ username, status }) => {
-      setOnlineStatus(prevStatus => ({ ...prevStatus, [username]: status }));
-    });
+    // socket.on('updateUserStatus', ({ username, status }) => {
+    //   setOnlineStatus(prevStatus => ({ ...prevStatus, [username]: status }));
+    // });
 
     // Notify server that the user is online
-    socket.emit('userOnline', user.username);
+    // socket.emit('userOnline', user.username);
 
     // Cleanup on component unmount
-    return () => {
-      socket.off('updateUserStatus');
-    };
+    // return () => {
+    //   socket.off('updateUserStatus');
+    // };
   }, [user.username]);
 
   return (

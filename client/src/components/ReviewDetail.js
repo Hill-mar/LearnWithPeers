@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../styles/ReviewDetail.css'; // Ensure you have this CSS for styling
-import io from 'socket.io-client';
+// import io from 'socket.io-client';
 import LiveChat from './LiveChat'; // Import the LiveChat component
 import ReadOnlyStarRating from './ReadOnlyStarRating'; // Import the ReadOnlyStarRating component
 import ReviewRatingForm from './ReviewRating'; // Import the ReviewRatingForm component
 const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
-const socket = io(`${BACKEND_URL}`); // Adjust the URL if necessary
+// const socket = io(`${BACKEND_URL}`); // Adjust the URL if necessary
 
 const ReviewDetail = () => {
     const { reviewId } = useParams();
@@ -24,19 +24,19 @@ const ReviewDetail = () => {
             .catch(error => console.error('Error fetching review details:', error));
 
         // Listen for online status updates
-        socket.on('updateUserStatus', ({ username, status }) => {
-            setOnlineStatus(prevStatus => ({ ...prevStatus, [username]: status }));
-        });
+        // socket.on('updateUserStatus', ({ username, status }) => {
+        //     setOnlineStatus(prevStatus => ({ ...prevStatus, [username]: status }));
+        // });
 
         // Cleanup on component unmount
-        return () => {
-            socket.off('updateUserStatus');
-        };
+        // return () => {
+        //     socket.off('updateUserStatus');
+        // };
     }, [reviewId]);
 
     const requestLiveChat = () => {
         setLiveChatRequested(true);
-        socket.emit('requestLiveChat', { reviewerId: review.reviewerId, attemptId: review.attemptId._id });
+        // socket.emit('requestLiveChat', { reviewerId: review.reviewerId, attemptId: review.attemptId._id });
     };
 
     const handleReviewRatingSubmit = (ratings) => {

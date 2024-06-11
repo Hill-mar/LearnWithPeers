@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const http = require('http');
-const socketio = require('socket.io');
+//const socketio = require('socket.io');
 const cors = require('cors');
 const path = require('path'); // Add this line to require the path module
 
@@ -13,14 +13,14 @@ const reviewsRoutes = require('../routes/reviews');
 const app = express();
 const server = http.createServer(app);
 
-const io = socketio(server, {
+/*const io = socketio(server, {
   cors: {
     origin: "https://learn-with-peers-frontend.vercel.app",
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
     credentials: true
   }
-});
+});*/
 
 const PORT = process.env.PORT || 8000;
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -53,7 +53,7 @@ app.get('/', (req, res) => {
 // In-memory store for online users
 const onlineUsers = {};
 
-// Socket.io connection
+/* Socket.io connection
 io.on('connection', (socket) => {
   console.log('A user connected');
 
@@ -80,7 +80,7 @@ io.on('connection', (socket) => {
       }
     }
   });
-});
+});*/
 
 // Start the server
 server.listen(PORT, () => {
