@@ -67,9 +67,7 @@ const ReviewDetail = () => {
                 <span className={`status-text ${onlineStatus[review.reviewerId] === 'online' ? 'online' : 'offline'}`}>
                     Reviewer: {onlineStatus[review.reviewerId] === 'online' ? 'Online' : 'Offline'}
                 </span>
-                {onlineStatus[review.reviewerId] === 'online' && !liveChatRequested && (
-                    <button onClick={requestLiveChat} className="request-live-chat-button">Request Live Chat</button>
-                )}
+                
             </div>
             <div className="content-container">
                 <div className="left-side">
@@ -110,7 +108,7 @@ const ReviewDetail = () => {
                         </div>
                 </div>
             </div>
-            {liveChatRequested && <LiveChat attemptId={review.attemptId._id} />}
+            
         </div>
     );
 };
