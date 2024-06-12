@@ -36,7 +36,7 @@ function ChallengeAttempt() {
                 setLoading(false);
             });
 
-        fetch(`${BACKEND_URL}/api/users/get-users`)
+        fetch(`https://learn-with-peers-backend.vercel.app/api/users/get-users`)
             .then(response => response.json())
             .then(data => setUsers(data))
             .catch(error => console.error('Failed to fetch users:', error));
@@ -164,7 +164,7 @@ function ChallengeAttempt() {
             </div>
             <div className="details-container">
                 <h1>Challenge Title: {challenge?.title}</h1>
-                {challenge && <img src={`${BACKEND_URL}/api/challenges/${challengeId}/photo`} alt="Challenge" className="challenge-image" />}
+                {challenge && <img src={`https://learn-with-peers-backend.vercel.app/api/challenges/${challengeId}/photo`} alt="Challenge" className="challenge-image" />}
                 <div className="details-text">
                     <p>Created by: {challenge?.createdBy}</p>
                     <p>Description: {challenge?.description}</p>

@@ -5,14 +5,13 @@ import StarRating from './StarRating';
 import '../styles/AttemptDetails.css';
 import { useUser } from '../context/UserContext';
 
-
 function AttemptDetails() {
     const { attemptId } = useParams();
     const [attempt, setAttempt] = useState(null);
     const [responses, setResponses] = useState({});
     const [loading, setLoading] = useState(true);
     const { user } = useUser();
-    const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
+    const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
     // State for rubric ratings
     const [rubric, setRubric] = useState({
@@ -26,8 +25,6 @@ function AttemptDetails() {
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                const fixedVideoUrl = `${BACKEND_URL}/${data.videoUrl.replace(/\\/g, '/')}`;
-                data.videoUrl = fixedVideoUrl;
                 setAttempt(data);
                 setLoading(false);
             })
@@ -58,7 +55,7 @@ function AttemptDetails() {
         const totalScore = rubric.codeQuality + rubric.functionality + rubric.readability;
         const scaledRating = (totalScore / 15) * 5;
 
-        fetch(`${BACKEND_URL}/api/reviews/send-reviews`, {
+        fetch(`https://learn-with-peers-backend.vercel.app/api/reviews/send-reviews`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -98,7 +95,7 @@ function AttemptDetails() {
                         <h2>Code Review</h2>
                         <pre>{attempt.code}</pre>
                     </div>
-                    <div className="rrubric-container">
+                    <div className="rubric-container">
                         <h2>Rate This Attempt</h2>
                         <div className="rubric-item">
                             <label>Code Quality: </label>
