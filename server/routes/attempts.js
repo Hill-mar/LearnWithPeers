@@ -19,6 +19,16 @@ const upload = multer({
   limits: { fileSize: 100 * 1024 * 1024 }, // 100 MB limit
 });
 
+router.post('/upload-video', upload.single('video'), async (req, res) => {
+    try {
+      const videoPath = req.file.location; // Save the S3 URL to your database
+      res.status(201).json({ message: 'Video uploaded successfully', path: videoPath });
+    } catch (error) {
+      console.error('Failed to upload video:', error);
+      res.status(500).json({ message: 'Failed to upload video', error: error.message });
+    }
+  });
+  k
 // POST endpoint for submitting a new attempt
 router.post('/send-attempts', async (req, res) => {
   const { challengeId, code, username, videoUrl, reviewer, questions } = req.body;
@@ -67,15 +77,7 @@ router.get('/view-attempts', async (req, res) => {
   }
 });
 
-router.post('/upload-video', upload.single('video'), async (req, res) => {
-  try {
-    const videoPath = req.file.location; // Save the S3 URL to your database
-    res.status(201).json({ message: 'Video uploaded successfully', path: videoPath });
-  } catch (error) {
-    console.error('Failed to upload video:', error);
-    res.status(500).json({ message: 'Failed to upload video', error: error.message });
-  }
-});
+
 
 // Route to get an attempt by ID
 router.get('/:attemptId', async (req, res) => {
