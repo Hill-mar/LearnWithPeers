@@ -75,7 +75,7 @@ function ChallengeAttempt() {
 
     const handleVideoUpload = async (videoBlob) => {
         const formData = new FormData();
-        formData.append('video', videoBlob, 'filename.webm');
+        formData.append('video', videoBlob, 'filename.mp4');
 
         const uploadResponse = await fetch(`https://learn-with-peers-backend.vercel.app/api/attempts/upload-video`, {
             method: 'POST',
