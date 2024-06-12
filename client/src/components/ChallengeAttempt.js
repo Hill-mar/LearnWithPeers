@@ -24,7 +24,7 @@ function ChallengeAttempt() {
     const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
 
     useEffect(() => {
-        fetch(`https://learn-with-peers-backend.vercel.app/api/challenges/${challengeId}`)
+        fetch(`${BACKEND_URL}/api/challenges/${challengeId}`)
             .then(response => response.json())
             .then(data => {
                 setChallenge(data);
