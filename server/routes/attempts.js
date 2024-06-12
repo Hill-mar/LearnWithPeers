@@ -28,7 +28,7 @@ router.post('/upload-video', upload.single('video'), async (req, res) => {
       res.status(500).json({ message: 'Failed to upload video', error: error.message });
     }
   });
-  k
+  
 // POST endpoint for submitting a new attempt
 router.post('/send-attempts', async (req, res) => {
   const { challengeId, code, username, videoUrl, reviewer, questions } = req.body;
